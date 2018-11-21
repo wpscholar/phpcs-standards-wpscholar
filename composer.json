@@ -1,5 +1,6 @@
 {
   "name": "wpscholar/phpcs-standards-wpscholar",
+  "description": "PHP Code Sniffer Standards for WP Scholar",
   "type": "phpcs-standards",
   "license": "GPL-2.0-or-later",
   "authors": [
