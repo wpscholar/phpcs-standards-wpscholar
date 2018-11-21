@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<ruleset name="WPScholar">
+    <description>The WP Scholar PHP Code Sniffer standard.</description>
+
+    <config name="installed_paths" value="../../wimg/php-compatibility,../../wp-coding-standards/wpcs"/>
+
+    <exclude-pattern>*/phpunit.xml*</exclude-pattern>
+    <exclude-pattern>*/languages/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
+
+    <!-- Third-party code -->
+    <exclude-pattern>*/bower-components/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <!-- Ensure certain file types aren't sniffed -->
+    <exclude-pattern>*.js</exclude-pattern>
+    <exclude-pattern>*.css</exclude-pattern>
+
+    <!-- Don't worry about files that don't contain any code -->
+    <rule ref="Internal.NoCodeFound">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Ignore mixed line-endings warnings -->
+    <rule ref="Internal.LineEndings.Mixed">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Internal exceptions (often occur on minified files) -->
+    <rule ref="Internal.Tokenizer.Exception">
+        <severity>0</severity>
+    </rule>
+
+    <!-- For CI, don't fail on warnings -->
+    <config name="ignore_warnings_on_exit" value="1"/>
+
+    <!-- Enforce doc standards -->
+    <rule ref="WordPress-Docs">
+        <!-- Don't worry about capitolizing long lines -->
+        <exclude name="Generic.Commenting.DocComment.LongNotCapital"/>
+    </rule>
+
+    <rule ref="WordPress-Extra">
+        <!-- Forget about file names -->
+        <exclude name="WordPress.Files.FileName"/>
+
+        <!-- Allow same line control structures e.g. if ( true ) { echo 1; } -->
+        <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace"/>
+
+        <!-- Don't require punctuation after inline comments -->
+        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+
+        <!-- Allow empty catch statements -->
+        <exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCatch"/>
+
+        <!-- Comment punctuation doesn't matter -->
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
+    </rule>
+
+    <!-- Sets the minimum supported WP version to 4.7, which is over a year old. -->
+    <config name="minimum_supported_wp_version" value="4.7"/>
+
+    <!-- Make missing translator comment a warning. -->
+    <rule ref="WordPress.WP.I18n.MissingTranslatorsComment">
+        <type>warning</type>
+    </rule>
+
+    <!-- Sometimes we need to override globals -->
+    <rule ref="WordPress.WP.GlobalVariablesOverride.OverrideProhibited">
+        <type>warning</type>
+    </rule>
+
+    <!-- Loads the PHP Compatibility ruleset. -->
+    <rule ref="PHPCompatibility"/>
+</ruleset>

@@ -1,0 +1,17 @@
+{
+  "name": "wpscholar/phpcs-standards-wpscholar",
+  "type": "phpcs-standards",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Micah Wood",
+      "email": "micah@wpscholar.com"
+    }
+  ],
+  "require": {
+    "squizlabs/php_codesniffer": "@stable",
+    "wimg/php-compatibility": "@stable",
+    "wp-coding-standards/wpcs": "@stable",
+    "wpscholar/phpcs-standards-installer": "@stable"
+  }
+}
