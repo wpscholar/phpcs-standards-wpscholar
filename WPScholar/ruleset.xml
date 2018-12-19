@@ -2,7 +2,7 @@
 <ruleset name="WPScholar">
     <description>The WP Scholar PHP Code Sniffer standard.</description>
 
-    <config name="installed_paths" value="../../wimg/php-compatibility,../../wp-coding-standards/wpcs"/>
+    <config name="installed_paths" value="../../phpcompatibility/php-compatibility,../../wp-coding-standards/wpcs"/>
 
     <exclude-pattern>*/phpunit.xml*</exclude-pattern>
     <exclude-pattern>*/languages/*</exclude-pattern>
