@@ -11,7 +11,7 @@
   ],
   "require": {
     "squizlabs/php_codesniffer": "@stable",
-    "wimg/php-compatibility": "@stable",
+    "phpcompatibility/php-compatibility": "@stable",
     "wp-coding-standards/wpcs": "@stable",
     "wpscholar/phpcs-standards-installer": "@stable"
   }
