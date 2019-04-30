@@ -1,7 +1,7 @@
 {
   "name": "wpscholar/phpcs-standards-wpscholar",
   "description": "PHP Code Sniffer Standards for WP Scholar",
-  "type": "phpcs-standards",
+  "type": "phpcodesniffer-standard",
   "license": "GPL-2.0-or-later",
   "authors": [
     {
@@ -13,6 +13,7 @@
     "squizlabs/php_codesniffer": "@stable",
     "phpcompatibility/php-compatibility": "@stable",
     "wp-coding-standards/wpcs": "@stable",
-    "wpscholar/phpcs-standards-installer": "@stable"
+    "dealerdirect/phpcodesniffer-composer-installer": "@stable",
+    "phpcompatibility/phpcompatibility-wp": "@stable"
   }
 }
