@@ -4,10 +4,11 @@
 
     <arg name="colors"/>
 
-    <config name="testVersion" value="5.6-"/>
+    <!-- Sets the supported PHP version range. -->
+    <config name="testVersion" value="7.0-"/>
 
-    <!-- Sets the minimum supported WP version to 5.2, which requires PHP 5.6. -->
-    <config name="minimum_supported_wp_version" value="5.2"/>
+    <!-- Sets the minimum supported WP version to 5.8, which requires PHP 5.6+ -->
+    <config name="minimum_supported_wp_version" value="5.8"/>
 
     <!-- For CI, don't fail on warnings -->
     <config name="ignore_warnings_on_exit" value="1"/>
@@ -86,5 +87,12 @@
 
     <!-- Loads the PHP Compatibility ruleset. -->
     <rule ref="PHPCompatibilityWP"/>
+
+    <!-- Throws Warnings for TODO comments in PHP and JS -->
+    <rule ref="Generic.Commenting.Todo"/>
+    <rule ref="Generic.Commenting.Todo.CommentFound">
+        <message>Please review this TODO comment: %s</message>
+        <severity>3</severity>
+    </rule>
 
 </ruleset>

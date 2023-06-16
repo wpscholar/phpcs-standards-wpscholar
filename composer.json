@@ -9,11 +9,15 @@
       "email": "micah@wpscholar.com"
     }
   ],
-  "require": {
+  "require-dev": {
     "squizlabs/php_codesniffer": "@stable",
-    "phpcompatibility/php-compatibility": "@stable",
     "wp-coding-standards/wpcs": "@stable",
-    "dealerdirect/phpcodesniffer-composer-installer": "@stable",
-    "phpcompatibility/phpcompatibility-wp": "@stable"
+    "phpcompatibility/phpcompatibility-wp": "@stable",
+    "dealerdirect/phpcodesniffer-composer-installer": "@stable"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }
